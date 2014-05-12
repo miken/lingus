@@ -6,8 +6,18 @@
 }
 
 .emoji-nav {
-    width: 1em;
-    height: 1em;
+    width: 2em;
+    height: 2em;
     display: inline-block;
-    margin-bottom: .25em;
+    margin-bottom: 1.4em;
+}
+
+.navtitle {
+    font-size: 36px;
+    font-weight: 500;
+}
+
+.lingo {
+    font-size: 20px;
+    font-weight: 500;
 }
