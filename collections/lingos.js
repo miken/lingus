@@ -1,0 +1,1 @@
+Lingos = new Meteor.Collection('lingos');
