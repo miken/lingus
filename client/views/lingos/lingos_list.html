@@ -13,7 +13,9 @@
     <p class="text-center">LINGO LIST</p>
     <p>
       {{#each lingos}}
-        {{> lingoItem}}
+        <div class="lingo">
+          <a href="{{pathFor 'lingoPage'}}">{{name}}</a>
+        </div>
       {{/each}}
     </p>
   </div>

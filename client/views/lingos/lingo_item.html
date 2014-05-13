@@ -1,5 +1,11 @@
 <template name="lingoItem">
-  <div class="lingo">
-    <a href="{{pathFor 'lingoPage'}}">{{name}}</a>
-  </div>
+  <h1>
+    {{name}}
+    <small>
+      <a href="{{pathFor 'lingoEdit'}}">
+        <span class="glyphicon glyphicon-pencil"></span>
+      </a>
+    </small>
+  </h1>
+  {{> definitionAdd}}
 </template>
