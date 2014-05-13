@@ -2,8 +2,10 @@
   <form role="search">
     <div class="form-group input-group">
       <input type="search" class="form-control" placeholder="Search for a lingo">
-      <span class="input-group-addon">
-        <span class="glyphicon glyphicon-search"></span>
+      <span class="input-group-btn">
+        <button type="submit" class="btn btn-default">
+          <span class="glyphicon glyphicon-search"></span>
+        </button>
       </span>
     </div>
   </form>
@@ -15,12 +17,5 @@
       {{/each}}
     </p>
   </div>
-  <form role="add">
-    <div class="form-group input-group">
-      <span class="input-group-addon">
-        <span class="glyphicon glyphicon-plus"></span>
-      </span>
-      <input type="text" class="form-control" placeholder="Add a new lingo">
-    </div>
-  </form>
+  {{> lingoAdd}}
 </template>
