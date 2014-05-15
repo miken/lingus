@@ -40,7 +40,7 @@ Meteor.methods({
       updated: new Date().getTime()
     });
 
-    var lingoId = Lingos.update(lingo);
+    var lingoId = Lingos.update(lingo, {$set: lingoProperties});
 
     return lingoId;
 
