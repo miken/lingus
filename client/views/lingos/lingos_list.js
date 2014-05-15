@@ -1,5 +1,7 @@
 Template.lingosList.helpers({
   lingos: function() {
-    return Lingos.find();
+    return Lingos.find(
+      {},
+      {sort: ["name", "desc"]});
   }
 });

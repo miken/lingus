@@ -6,7 +6,16 @@ Template.lingoAdd.events({
       name: $(e.target).find('[name=name]').val()
     };
 
-    lingo._id = Lingos.insert(lingo);
-    Router.go('lingoPage', lingo);
+    Meteor.call('post', lingo, function(error, id) {
+      if (error) {
+        // display the error to the user
+        throwError(error.reason);
+
+        if (error.error === 302)
+          Router.go('lingoPage', {_id: error.details});
+      } else {
+        Router.go('lingoPage', {_id: id});
+      }
+    });
   }
 });
