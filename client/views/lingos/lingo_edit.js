@@ -8,17 +8,13 @@ Template.lingoEdit.events({
       name: $(e.target).find('[name=name]').val()
     };
 
-    Lingos.update(
-      currentLingoId,
-      {$set: lingoProperties},
-      function(error) {
-        if (error) {
-          // display the error to the user
-          alert(error.reason);
-        } else {
-          Router.go('lingoPage', {_id: currentLingoId});
-        }
-      });
+    Meteor.call('update', currentLingoId, lingoProperties, function(error) {
+      if (error) {
+        throwError(error.reason);
+      } else {
+        Router.go('lingoPage', {_id: currentLingoId});
+      }
+    });
   },
 
   'click .delete': function(e) {
