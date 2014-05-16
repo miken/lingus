@@ -1,0 +1,1 @@
+@Definitions = new Meteor.Collection("definitions")
