@@ -13,6 +13,8 @@ Router.map ->
 
   @route "lingoPage",
     path: "/lingos/:_id"
+    waitOn: ->
+      Meteor.subscribe 'definitions', @params._id
     data: ->
       Lingos.findOne @params._id
 
@@ -21,9 +23,14 @@ Router.map ->
     data: ->
       Lingos.findOne @params._id
 
-  return
+  @route "definitionEdit",
+    path: "/definitions/:_id/edit"
+    waitOn: ->
+      Meteor.subscribe 'currentDefinition', @params._id
+    data: ->
+      Definitions.findOne @params._id
+
 
 Router.onBeforeAction "loading"
 Router.onBeforeAction ->
   clearErrors()
-  return

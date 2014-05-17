@@ -1,3 +1,11 @@
 <template name="lingoPage">
   {{> lingoItem}}
+
+  <div class="list-group">
+    {{#each definitions}}
+      {{> definition}}
+    {{/each}}
+  </div>
+
+  {{> definitionAdd}}
 </template>

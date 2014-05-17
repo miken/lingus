@@ -2,8 +2,10 @@ Template.lingoAdd.events
   'submit form': (e) ->
     e.preventDefault()
     
+    $name = $(e.target).find("[name=name]")
+    
     lingo =
-      name: $(e.target).find("[name=name]").val()
+      name: $name.val()
 
     Meteor.call "post", lingo, (error, id) ->
       if error
@@ -15,5 +17,7 @@ Template.lingoAdd.events
             _id: error.details
 
       else
+        # Leave blank in the name field
+        $name.val('')
         Router.go "lingoPage",
           _id: id
