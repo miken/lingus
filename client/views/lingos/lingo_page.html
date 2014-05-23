@@ -1,8 +1,8 @@
 <template name="lingoPage">
   {{> lingoItem}}
 
-  <div class="list-group">
-    {{#each definitions}}
+  <div class="list-group definition">
+    {{#each definitionsWithRank}}
       {{> definition}}
     {{/each}}
   </div>
