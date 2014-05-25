@@ -18,7 +18,7 @@ validateLingo = (lingoProperties) ->
 
 Meteor.methods
   post: (lingoProperties) ->
-    validateLingo(lingoProperties)
+    lingo = validateLingo(lingoProperties)
     # insert lingo and return created record
     Lingos.insert(lingo)
 
