@@ -67,4 +67,7 @@ Template.definition.events
   'click .star': (e) ->
     e.preventDefault()
 
-    Meteor.call 'star', @_id
+    starredKey = "starred_definition_" + @_id
+    if not amplify.store(starredKey)
+      amplify.store(starredKey, true)
+      Meteor.call 'star', @_id
