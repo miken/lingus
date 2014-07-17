@@ -25,6 +25,7 @@ Meteor.methods
     definition = _.extend(_.pick(newDefinition, "lingoId", "detail", "example"),
       updated: new Date().getTime()
       starCount: 0
+      flagCount: 0
     )
 
     Definitions.insert(definition)
@@ -51,4 +52,9 @@ Meteor.methods
         starCount: 1
     )
 
+  flag: (definitionId) ->
+    Definitions.update(definitionId, 
+      $inc:
+        flagCount: 1
+    )
 

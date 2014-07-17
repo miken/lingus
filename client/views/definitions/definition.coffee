@@ -71,3 +71,12 @@ Template.definition.events
     if not amplify.store(starredKey)
       amplify.store(starredKey, true)
       Meteor.call 'star', @_id
+
+  'click .flag': (e) ->
+    e.preventDefault()
+
+    flaggedKey = "flagged_definition_" + @_id
+    if not amplify.store(flaggedKey)
+      amplify.store(flaggedKey, true)
+      Meteor.call 'flag', @_id
+      $(e.currentTarget).removeClass('text-muted').addClass('text-danger')
