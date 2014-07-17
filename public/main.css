@@ -56,3 +56,21 @@
   -o-transition-delay: ease-in;
   transition: all 300ms 0ms ease-in;
 }
+
+.logo {
+  margin-top: 10em;
+  text-align: center;
+}
+
+.emoji-logo {
+  width: 3em;
+  height: 3em;
+  display: inline-block;
+  margin-bottom: 2.2em;
+}
+
+.logo-text {
+  font-size: 3.7em;
+  font-weight: 500;
+  letter-spacing: .01px;
+}

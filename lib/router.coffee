@@ -1,6 +1,4 @@
 Router.configure
-  layoutTemplate: "layout"
-  loadingTemplate: "loading"
   waitOn: ->
     [
       Meteor.subscribe("lingos")
@@ -10,8 +8,12 @@ Router.configure
 Router.map ->
   @route "welcome",
     path: "/"
+    layoutTemplate: "layout"
+    loadingTemplate: "loading"
 
   @route "lingoPage",
+    layoutTemplate: "layout"
+    loadingTemplate: "loading"
     path: "/lingos/:_id"
     waitOn: ->
       Meteor.subscribe 'definitions', @params._id
@@ -19,16 +21,25 @@ Router.map ->
       Lingos.findOne @params._id
 
   @route "lingoEdit",
+    layoutTemplate: "layout"
+    loadingTemplate: "loading"
     path: "/lingos/:_id/edit"
     data: ->
       Lingos.findOne @params._id
 
   @route "definitionEdit",
+    layoutTemplate: "layout"
+    loadingTemplate: "loading"
     path: "/definitions/:_id/edit"
     waitOn: ->
       Meteor.subscribe 'currentDefinition', @params._id
     data: ->
       Definitions.findOne @params._id
+
+  @route "front",
+    layoutTemplate: "front"
+    loadingTemplate: "loading"
+    path: "/front"
 
 
 Router.onBeforeAction "loading"
